@@ -2,6 +2,7 @@ name: jupyterhub_teaching
 channels:
   - conda-forge
 dependencies:
+  - python=3.5.2
   - sphinx
   - sphinx_rtd_theme
   - pip:
