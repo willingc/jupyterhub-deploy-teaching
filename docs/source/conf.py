@@ -9,7 +9,7 @@ import shlex
 import recommonmark.parser
 
 # Set paths
-#sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.dirname(__file__))
 
 # -- General configuration ------------------------------------------------
 
