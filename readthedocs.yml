@@ -3,6 +3,3 @@ conda:
 python:
   version: 3
   setup_py_install: true
-formats:
-    - epub
-    - pdf
