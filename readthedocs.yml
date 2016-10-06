@@ -1,5 +1,3 @@
-name: jupyterhub-deploy-teaching
-type: sphinx
 conda:
   file: docs/environment.yml
 python:
