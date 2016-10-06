@@ -1,8 +1,8 @@
-name: jupyterhub_teaching
+name: jhub_teaching
 channels:
   - conda-forge
 dependencies:
-  - python=3.5.2
+  - python==3.5
   - sphinx
   - sphinx_rtd_theme
   - pip:
