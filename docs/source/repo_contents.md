@@ -1,79 +1,51 @@
 # Repository Contents
 
-## Ansible application
+The following directories and files contain the Ansible deployment of
+JupyterHub for Teaching.
 
-### ansible.cfg
+## Overview
 
-Custom configuration settings for the Ansible application
-- We use to customize root access, root privileges, and ssh connection length.
+| Directory or File Name | Description                                                |
+| ---------------------- | ---------------------------------------------------------- |
+| **ansible-conda**      | submodule for using conda with ansible                     |
+| **group_vars**         | group variables directory for Ansible                      |
+| **host_vars**          | host variables directory for Ansible                       |
+| **roles**              | roles directory for Ansible                                |
+| **security**           | security directory for Ansible                             |
+| README.md              | basic information about the repo                           |
+| ansible.cfg            | custom configuration settings for Ansible                  |
+| deploy.yml             | playbook to deploy JupyterHub                              |
+| deploy_formgrade.yml   | playbook to deploy nbgrader's formgrader                   |
+| hosts.example          | inventory file of servers (hosts) being managed by Ansible |
+| saveusers.yml          | save users playbook (useful for backups)                   |
 
-### ansible-conda
 
-Git submodule for `ansible-conda` application
-
-## Inventory (Ansible)
-
-### hosts.inventory
-
-Inventory file of servers (hosts) being managed by Ansible
-
-## Playbooks (Ansible)
-
-### deploy.yml (a.k.a. site.yml in Ansible jargon)
-
-### deploy_formgrade.yml
-
-### saveusers.yml
-
-## Variables (Ansible)
-
-### group_vars
-
-### host_vars
 
 ## Roles (Ansible)
 
-### bash
+The `roles` directory provides plays for deploying various functionality.
 
-### common
+- bash
 
-### cull_idle
+- common
 
-### formgrade
+- cull_idle
 
-### jupyterhub
+- formgrade
 
-### nbgrader
+- jupyterhub
 
-### newrelic
+- nbgrader
 
-### nginx
+- newrelic
 
-### python
+- nginx
 
-### r
+- python
 
-### saveusers
+- r
 
-### supervisor
+- saveusers
 
+- supervisor
 
-## Development
-
-### .gitignore
-
-### .gitmodules
-
-### LICENSE
-
-### README.md
-
-## Documentation
-
-### readthedocs.yml
-
-Settings for readthedocs services
-
-### docs
-
-Directory containing sphinx documentation for the reference deployment.
