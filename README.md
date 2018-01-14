@@ -101,14 +101,17 @@ Ansible deploy commands:
 ``ansible-playbook -i hosts -l hostname deploy.yml``
 
 ### Authentication
+
 If you are not using GitHub OAuth, you will need to manually create users
 using adduser: ``adduser --gecos "" username``.
 
 ### Logs
+
 The logs for jupyterhub are in ``/var/log/jupyterhub``.
 
 The logs for nbgrader are in ``/var/log/nbgrader``.
 
 ### Starting, stopping, and restarting the Hub
+
 To manage the jupyterhub and nbgrader services by SSH to the server
 and run: ``supervisorctl jupyterhub [start|stop|restart]``
