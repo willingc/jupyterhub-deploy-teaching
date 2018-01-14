@@ -1,4 +1,4 @@
-"""Save usernames and uids."""
+"""Save usernames and uids to a file."""
 
 import pwd
 import os

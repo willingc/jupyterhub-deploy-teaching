@@ -1,13 +1,14 @@
-"""Create saved users with the same home directories and uids."""
+"""Create users with same username, uid, and home dir as saved_users.txt."""
 import pwd
 import os, sys
 from subprocess import check_call
 import json
 
+
 fname = './saved_users.txt'
 
 if not os.path.isfile(fname):
-    print('No saved users found')
+    print('No saved users file found')
     sys.exit()
 
 with open(fname, 'r') as f:
@@ -16,7 +17,7 @@ with open(fname, 'r') as f:
 for username, uid in users:
     home_dir = os.path.abspath(os.path.join('.', username))
     try:
-        udata = pwd.getpwnam(username)
+        user_data = pwd.getpwnam(username)
     except KeyError:
         cmd = ['adduser', '-q', '--uid', str(uid),
                '--no-create-home', '--home', home_dir,
@@ -29,7 +30,8 @@ for username, uid in users:
         except CalledProcessError:
             print('Error in creating user: {}'.format(' '.join(cmd)))
     else:
-        if udata.pw_uid == uid and udata.pw_dir == home_dir:
+        if user_data.pw_uid == uid and user_data.pw_dir == home_dir:
             print('User already exists: {}'.format(username))
         else:
-            print("User exists, but uid or home dir don't match", uid, udata.pw_uid, home_dir, udata.pw_dir)
+            print("User exists, but uid or home dir don't match", uid,
+                  user_data.pw_uid, home_dir, user_data.pw_dir)

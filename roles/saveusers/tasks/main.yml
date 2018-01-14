@@ -1,7 +1,10 @@
 ---
-  
+# install script which will save_users to a file
+
 - name: install save_users.py into {{home_dir}}
   copy: src=save_users.py dest={{home_dir}} owner=root group=root mode=0600
+
+# install and run script to create users from a saved_users file
 
 - name: install create_users.py into {{home_dir}}
   copy: src=create_users.py dest={{home_dir}} owner=root group=root mode=0600
